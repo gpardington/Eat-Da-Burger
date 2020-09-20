@@ -31,7 +31,7 @@ $(function() {
         burger_name: $("#burger").val().trim(),
         crushed: 0
       };
-  
+      console.log(newBurger);
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
