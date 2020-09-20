@@ -1,1 +1,38 @@
-<h1>Burgers</h1>
+<div id="header">
+    <h1>Eat Da Burger!</h1>
+</div>
+
+<!-- Middle section -->
+<div id="middleSection">
+
+<!-- Left section -->
+    <div id="left">
+        <div class="uneaten center">
+            {{#each burger}}
+                {{#unless crushed}}
+                    {{> burgers/burger-block crushed=1}}
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Center section -->
+    <div class="centerMiddle">
+        <div class="center">
+            <input id="burgerName" type="test" placeholder="Name of Yo Burger" data-eaten="0">
+            <button id="addBurger" type="button">Add Yo Burger</button>
+        </div>
+    </div>
+
+    <!-- Right section -->
+    <div id="right">
+        <div class="eaten center">
+            {{#each burger}}
+                {{#if crushed}}
+                    {{> burgers/burger-block crushed=0}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+</div>
