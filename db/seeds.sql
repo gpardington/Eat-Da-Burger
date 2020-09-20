@@ -1,10 +1,10 @@
 ### Seeds 
 
 USE burgers_db;
-INSERT INTO burgers (burger_name, crushed)
+INSERT INTO burgers (id, burger_name, crushed)
 VALUES
-('Cheese Burger', FALSE),
-('Bacon Guac Double Cheese Burger', FALSE),
-('Double Royale with Cheese', FALSE),
-('Impossible Burger', FALSE),
-('Nashville Hot Chicken Burger', FALSE)
+(1, 'Green Chile Cheese Burger', FALSE),
+(2, 'Bacon Guac Double Cheese Burger', FALSE),
+(3, 'Double Royale with Cheese', FALSE),
+(4, 'Impossible Burger', FALSE),
+(5, 'Nashville Hot Chicken Burger', FALSE)
