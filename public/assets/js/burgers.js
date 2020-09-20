@@ -3,7 +3,9 @@ $(function() {
     $(".change-crushed").on("click", function(event) {
       var id = $(this).data("id");
       var newCrushed = $(this).data("newcrushed");
-  
+      //Flip crushed boolean
+      var newCrushed = !newCrushed;
+      //Add new state to object
       var newCrushedState = {
         crushed: newCrushed
       };
@@ -27,7 +29,7 @@ $(function() {
   
       var newBurger = {
         burger_name: $("#burger").val().trim(),
-        crushed: $("[name=crushed]:checked").val().trim()
+        crushed: 0
       };
   
       // Send the POST request.
@@ -36,7 +38,7 @@ $(function() {
         data: newBurger
       }).then(
         function() {
-          console.log("created new burger");
+          console.log("Created new burger");
           // Reload the page to get the updated list
           location.reload();
         }

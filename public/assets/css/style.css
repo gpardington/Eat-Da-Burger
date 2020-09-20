@@ -1,6 +1,7 @@
 body {
     width:400px;
     margin: 0 auto;
+    background-color: yellow;
   }
   body, button {
     font-family: 'Righteous', cursive;
