@@ -1,41 +1,8 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
-
-function printQuestionMarks(num) {
-  var arr = [];
-
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
-  }
-
-  return arr.toString();
-}
-
-// Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
-  var arr = [];
-
-  // loop through the keys and push the key/value as a string int arr
-  for (var key in ob) {
-    var value = ob[key];
-    // check to skip hidden properties
-    if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
-      }
-      // e.g. {name: 'Double Cheese Burger'} => ["name='Double Cheese Burger'"]
-      // e.g. {crushed: true} => ["crushed=true"]
-      arr.push(key + "=" + value);
-    }
-  }
-
-  // translate array of strings to a single comma-separated string
-  return arr.toString();
-}
+const connection = require("../config/connection.js");
 
 // Object for all our SQL statement functions.
-var orm = {
+const orm = {
   //Display ALL burgers
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
@@ -88,3 +55,36 @@ var orm = {
 
 // Export the orm object for the model (cat.js).
 module.exports = orm;
+
+//Orm helper functions
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+
+  return arr.toString();
+}
+
+// Helper function to convert object key/value pairs to SQL syntax
+function objToSql(ob) {
+  var arr = [];
+
+  // loop through the keys and push the key/value as a string int arr
+  for (var key in ob) {
+    var value = ob[key];
+    // check to skip hidden properties
+    if (Object.hasOwnProperty.call(ob, key)) {
+      // if string with spaces, add quotations (Bacon Cheeseburger => 'Bacon Cheeseburger')
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
+      // e.g. {name: 'Bacon Cheeseburger'} => ["name='Bacon Cheeseburger'"]
+      // e.g. {crushed: true} => ["crushed=true"]
+      arr.push(key + "=" + value);
+    }
+  }
+   // translate array of strings to a single comma-separated string
+   return arr.toString();
+  }
