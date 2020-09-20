@@ -45,19 +45,18 @@ var orm = {
       cb(result);
     });
   },
-  create: function(table, cols, vals, cb) {
+  create: function(table, objColVals, condition, cb) {
     var queryString = "INSERT INTO " + table;
 
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
+    queryString += " SET ";
+    queryString += objColVals(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
+    
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
