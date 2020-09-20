@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 //Template view engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
