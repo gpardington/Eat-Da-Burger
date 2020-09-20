@@ -1,40 +1,43 @@
-<div id="header">
-    <h1>Eat Da Burger!</h1>
-</div>
-
-<!-- New Burgers that need to be murdered still section -->
-<div class="newBurgers">
-    <h2>Burgers That NEED To Be Crushed:</h2>
-<!-- Left section -->
-    <ul>
-        {{#each burger}}
-            {{#unless crushed}}
-                {{> burgers/burger-block crushed=false}}
-            {{/unless}}
-        {{/each}}
-    </ul>
-</div>
+<div class="container-fluid">
+  <div class="row">
+      <!--Header-->
+    <div class="jumbotron">
+        <h1>Eat Da Burger!</h1>
+    </div>
+    <!--Burgers that need to be crushed section-->
+    <div class="col-md-6 left">
+        <h2>Burgers That NEED To Be Crushed:</h2>
+        <ul>
+            {{#each burger}}
+                {{#unless crushed}}
+                    {{> burgers/burger-block crushed=false}}
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
     
 <!-- Burgers that have been murdered section -->
-<div class="crushedBurgers">
-    <h2>Crushed Burgers:</h2>
-    <ul>
-        {{#each burger}}
-            {{#if crushed}}
-                {{> burgers/burger-block crushed=true}}
-            {{/if}}
-        {{/each}}
-    </ul>   
-</div>
+    <div class="col-md-6 right">
+        <h2>Crushed Burgers:</h2>
+        <ul>
+            {{#each burger}}
+                {{#if crushed}}
+                    {{> burgers/burger-block crushed=true}}
+                {{/if}}
+            {{/each}}
+        </ul>   
+    </div>
 
 <!-- Add a new burger section -->
-<div class="addBurger">
-    <h2>Add a Burger!</h2>
-    <form class="create-form">
-        <div class="form-group">
-            <label for="burger">Burger Name:</label>
-            <input type="text" id="burger" name="name">
-        </div>
-        <button id="add-burger" type="submit">Add Burger</button>
-    </form> 
+    <div class="row col-md-12 bottom">
+        <h2>Add a Burger!</h2>
+        <form class="create-form">
+            <div class="form-group">
+                <label for="burger">Burger Name:</label>
+                <input type="text" id="burger" name="name">
+            </div>
+            <button id="add-burger" type="submit">Add Burger</button>
+        </form> 
+    </div>
+</div>
 </div>
