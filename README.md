@@ -21,13 +21,14 @@ AS A user I WANT to be able to enter and save burgers that I would like to try a
 
 ## Installation
 
-No installation required. This app has been deployed on Heroku so you can visit it here: EAT-DA-BURGER
+No installation required. This app has been deployed on Heroku so you can visit it here: [EAT-DA-BURGER](https://glacial-savannah-78688.herokuapp.com/)
+- https://glacial-savannah-78688.herokuapp.com/
 
 ### Dependencies
 
-"express": "^4.17.1",
-"express-handlebars": "^5.1.0",
-"mysql": "^2.18.1",
+-"express": "^4.17.1"
+-"express-handlebars": "^5.1.0"
+-"mysql": "^2.18.1"
 
 ## Demo
 
