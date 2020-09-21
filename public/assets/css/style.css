@@ -1,21 +1,36 @@
 body {
-    width:400px;
-    margin: 0 auto;
-    background-color: yellow;
-  }
-  body, button {
-    font-family: 'Righteous', cursive;
-  }
-  h2 {
-    margin: 1.5em .25em .1em 0em;
-  }
-  button, li {
-    text-transform: uppercase;
-    margin: .25em;
-  }
-  li {
-    list-style: none;
-  }
-  button #add-burger {
-    margin: 0 auto !important;
-  } 
+  background-color: yellow;
+  font-family: 'Righteous', cursive;
+}
+
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("logos.jpg");
+}
+
+.jumbotron {
+  padding-right: 60px;
+  padding-left: 60px;
+  border-radius: 6px;
+  text-align: center;
+  background-color: yellow;
+  color: rgb(180, 123, 16);
+}
+.left {
+  text-align: center;
+}
+.right {
+  text-align: center;
+}
+.bottom {
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+li {
+  font-size: medium;
+}

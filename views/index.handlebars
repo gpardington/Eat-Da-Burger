@@ -8,7 +8,7 @@
     <div class="col-md-6 left">
         <h2>Burgers That NEED To Be Crushed:</h2>
         <ul>
-            {{#each burger}}
+            {{#each burgers}}
                 {{#unless crushed}}
                     {{> burgers/burger-block crushed=false}}
                 {{/unless}}
@@ -20,7 +20,7 @@
     <div class="col-md-6 right">
         <h2>Crushed Burgers:</h2>
         <ul>
-            {{#each burger}}
+            {{#each burgers}}
                 {{#if crushed}}
                     {{> burgers/burger-block crushed=true}}
                 {{/if}}

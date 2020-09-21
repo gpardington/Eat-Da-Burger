@@ -1,8 +1,6 @@
 //Set dependencies & variables
 const express = require("express");
-const PORT = process.env.PORT || 3000;
-
-//Start Express Server
+const PORT = process.env.PORT || 9000;
 const app = express();
 
 // Middleware
