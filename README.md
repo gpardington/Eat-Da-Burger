@@ -31,7 +31,7 @@ No installation required. This app has been deployed on Heroku so you can visit 
 
 ## Demo
 
-![Demo](./public/assets/demo/demo.gif)
+![Demo](public/assets/demo.gif?raw=true)
 
 ### Contributors:
 
