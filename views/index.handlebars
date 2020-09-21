@@ -1,43 +1,45 @@
 <div class="container-fluid">
-  <div class="row">
+    <div class="row alight-items-start">
       <!--Header-->
-    <div class="jumbotron">
-        <h1>Eat Da Burger!</h1>
+        <div class="jumbotron">
+            <h1>Eat Da Burger!</h1>
+        </div>
     </div>
     <!--Burgers that need to be crushed section-->
-    <div class="col-md-6 left">
-        <h2>Burgers That NEED To Be Crushed:</h2>
-        <ul>
-            {{#each burgers}}
-                {{#unless crushed}}
-                    {{> burgers/burger-block crushed=false}}
-                {{/unless}}
-            {{/each}}
-        </ul>
+    <div class="row align-items-center">
+        <div class="col-md-6 left">
+            <h2>Burgers That NEED To Be Crushed:</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless crushed}}
+                        {{> burgers/burger-block crushed=false}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    <!-- Burgers that have been murdered section -->
+        <div class="col-md-6 right">
+            <h2>Crushed Burgers:</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#if crushed}}
+                        {{> burgers/burger-block crushed=true}}
+                    {{/if}}
+                {{/each}}
+            </ul>   
+        </div>
     </div>
-    
-<!-- Burgers that have been murdered section -->
-    <div class="col-md-6 right">
-        <h2>Crushed Burgers:</h2>
-        <ul>
-            {{#each burgers}}
-                {{#if crushed}}
-                    {{> burgers/burger-block crushed=true}}
-                {{/if}}
-            {{/each}}
-        </ul>   
-    </div>
-
 <!-- Add a new burger section -->
-    <div class="row col-md-12 bottom">
-        <h2>Add a Burger!</h2>
-        <form class="create-form">
-            <div class="form-group">
-                <label for="burger">Burger Name:</label>
-                <input type="text" id="burger" name="name">
-            </div>
-            <button id="add-burger" type="submit">Add Burger</button>
-        </form> 
+    <div class="row">
+        <div class="col-md-12 bottom align-items-end">
+            <h2>Add a Burger!</h2>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burger">Burger Name:</label>
+                    <input type="text" id="burger" name="name">
+                </div>
+                <button id="add-burger" type="submit">Add Burger</button>
+            </form> 
+        </div>
     </div>
-</div>
 </div>
